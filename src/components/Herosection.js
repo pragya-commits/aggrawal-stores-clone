@@ -47,11 +47,11 @@ const Herosection = () => {
       paddingLeft: "20px",
       fontSize: "30px",
       borderStyle: "inset",
-      border: "1px,solid,black",
+      // border: "1px,solid,black",
       fontWeight: "bolder",
       marginLeft: "130px",
       marginTop: "40px",
-      borderWidth: "3px",
+      // borderWidth: "3px",
       ":hover": {
         backgroundColor: "#37a9ff",
         color: "white",
