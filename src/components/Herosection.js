@@ -9,7 +9,7 @@ const Herosection = () => {
       justifyContent: "space-between",
       alignItems: "center",
       paddingLeft: "30px",
-      paddingTop: "169px",
+      paddingTop: "50px",
       paddingRight: "0px",
       paddingLeft: "146",
       paddingBottom: "80px",
