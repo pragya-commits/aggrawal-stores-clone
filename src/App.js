@@ -9,6 +9,7 @@ import Location from "./components/Location";
 import Offers from "./components/Offers";
 import Aboutus from "./components/Aboutus";
 import Reviews from "./components/Reviews";
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
@@ -22,6 +23,7 @@ function App() {
       <Offers></Offers>
       <Aboutus></Aboutus>
       <Reviews></Reviews>
+      <Footer></Footer>
     </>
   );
 }
