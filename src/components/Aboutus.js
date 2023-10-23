@@ -4,7 +4,7 @@ import people from "./people.png";
 const Aboutus = () => {
   const styles = {
     mainaboutdiv: {
-      backgroundColor: "#FFFF00",
+      backgroundColor: "#FFD700",
       display: "flex",
       justifyContent: "space-between",
     },
