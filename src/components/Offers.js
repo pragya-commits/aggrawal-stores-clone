@@ -1,5 +1,5 @@
 import react from "react";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import offerspray from "./offerspray.png";
 import offerpink from "./offerpink.png";
 import offermakeup from "./offermakeup.png";
@@ -8,20 +8,37 @@ const Offers = () => {
   const styles = {
     offersimg: {
       display: "flex",
+      justifyContent: "center",
+      flexWrap: "wrap",
+      marginTop: "40px",
+      marginBottom: "40px",
+    },
+    firstBox: {
+      marginRight: "15px",
+      minHeight: "100%",
+    },
+    makemilk: {
+      display: "flex",
       justifyContent: "space-between",
       flexWrap: "wrap",
-      marginRight: "-15px",
-      marginLeft: "-15px",
     },
   };
   return (
-    <Box sx={styles.offersimg}>
-      <img src={offerspray} width={460} height={489.76} />
+    <Box>
+      <Typography>Offers</Typography>
+      <Box sx={styles.offersimg}>
+        <Box sx={styles.firstBox}>
+          <img src={offerspray} width={460} />
+        </Box>
 
-      <img src={offerpink} width={635} height={263.74} />
-
-      <img src={offermakeup} width={302.5} height={232.42} />
-      <img src={offermilk} width={302.5} height={230.95} />
+        <Box>
+          <img src={offerpink} width={635} height={263.74} />
+          <Box sx={styles.makemilk}>
+            <img src={offermakeup} width={302.5} height={232.42} />
+            <img src={offermilk} width={302.5} height={230.95} />
+          </Box>
+        </Box>
+      </Box>
     </Box>
   );
 };
