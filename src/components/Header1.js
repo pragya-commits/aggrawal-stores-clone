@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
-import Logo1 from "./aggrawal stores logo.png";
+// import Logo1 from "./aggrawal stores logo.png";
+import Logo1 from "../assets/images/aggrawal stores logo.png";
 import contact1 from "./contact image.png";
 
 const Header1 = () => {
@@ -21,6 +22,7 @@ const Header1 = () => {
     },
     navitem: {
       marginRight: "30px",
+      cursor: "pointer",
       ":hover": {
         backgroundColor: "black",
         color: "white",

@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 import Herosectionimg from "./herosection image.png";
-import { hover } from "@testing-library/user-event/dist/hover";
+
 const Herosection = () => {
   const styles = {
     herosection: {
@@ -62,7 +62,7 @@ const Herosection = () => {
     // hero main section starts
     <Box sx={styles.mainherodiv}>
       {/* content of herosection starts */}
-      <box sx={styles.herosection}>
+      <box>
         {/* left side content */}
         <Typography sx={styles.order}>
           ORDER <br></br>ONLINE

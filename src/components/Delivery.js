@@ -7,6 +7,7 @@ const Delivery = () => {
       marginTop: "150px",
       alignItem: "center",
       marginLeft: "35px",
+      // margin: "0 auto",
     },
     text: {
       fontSize: "4.933vw",
@@ -21,7 +22,14 @@ const Delivery = () => {
 
   return (
     <Box sx={styles.maindeliverydiv}>
-      <img src={Deliveryimage} width={1110} height={559.41} />
+      <img
+        src={Deliveryimage}
+        width={1110}
+        height={559.41}
+        style={{
+          paddingLeft: "10%",
+        }}
+      />
       <Box sx={styles.deliverytext}>
         <Typography sx={styles.text}>
           We are delivering in 5 km Radius of all <br></br>our stores

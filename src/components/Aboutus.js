@@ -7,6 +7,7 @@ const Aboutus = () => {
       backgroundColor: "#FFD700",
       display: "flex",
       justifyContent: "space-between",
+      padding: "30px",
     },
     rightsimage: {
       paddingLeft: "600px",

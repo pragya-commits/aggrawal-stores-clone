@@ -10,9 +10,11 @@ import Offers from "./components/Offers";
 import Aboutus from "./components/Aboutus";
 import Reviews from "./components/Reviews";
 import Footer from "./components/Footer";
+import CustomSlider from "./components/CustomSlider";
 function App() {
   return (
     <>
+      {/* <CustomSlider /> */}
       <Header></Header>
       <Herosection></Herosection>
       <Products></Products>
