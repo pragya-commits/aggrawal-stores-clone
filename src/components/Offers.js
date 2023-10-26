@@ -16,16 +16,12 @@ const Offers = () => {
   };
   return (
     <Box sx={styles.offersimg}>
-      <Box>
-        <img src={offerspray} width={460} height={489.76} />
-      </Box>
-      <Box>
-        <img src={offerpink} width={635} height={263.74} />
-      </Box>
-      <Box sx={styles.makemilk}>
-        <img src={offermakeup} width={302.5} height={232.42} />
-        <img src={offermilk} width={302.5} height={230.95} />
-      </Box>
+      <img src={offerspray} width={460} height={489.76} />
+
+      <img src={offerpink} width={635} height={263.74} />
+
+      <img src={offermakeup} width={302.5} height={232.42} />
+      <img src={offermilk} width={302.5} height={230.95} />
     </Box>
   );
 };
