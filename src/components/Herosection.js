@@ -1,81 +1,87 @@
-import { Box, Button, Typography } from "@mui/material";
 import React from "react";
+import { Box, Button, Typography } from "@mui/material";
 import Herosectionimg from "./herosection image.png";
+import { useResponsiveStyles } from "../utils/useResponsiveStyles";
 
 const Herosection = () => {
+  const { tabletDesign } = useResponsiveStyles();
+
   const styles = {
-    herosection: {
+    mainherodiv: {
+      backgroundColor: "#007bff",
+      // padding: "90px 0 40px 146px",
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      paddingLeft: "30px",
-      paddingTop: "50px",
-      paddingRight: "0px",
-      paddingLeft: "146",
-      paddingBottom: "80px",
-    },
-
-    mainherodiv: {
-      backgroundColor: "#007bff",
-      paddingTop: "90px",
-      paddingRight: "0px",
-      paddingLeft: "146",
-      paddingBottom: "40px",
-      display: "flex",
-      justifyContent: "space-between",
-    },
-    heroright: {
-      maxWidth: "100%",
-      height: "auto",
-      floatRight: "!important",
-      padding: "80px",
+      ...tabletDesign({
+        flexDirection: "column",
+        alignItems: "flex-start",
+        padding: "20px 0px 20px 30px",
+      }),
     },
     order: {
       fontSize: "8.6vw",
       fontWeight: "700",
-      lineHeight: ".89",
-      textAlign: "left",
+      lineHeight: 0.89,
       color: "white",
       marginLeft: "130px",
       paddingTop: "100px",
+      textAlign: "left",
+      ...tabletDesign({
+        // textAlign: "center",
+        marginLeft: "0",
+        fontSize: "50px",
+
+        paddingTop: "0",
+      }),
     },
     btn: {
       backgroundColor: "white",
-      color: "rgb(30,144,255)",
+      color: "rgb(30, 144, 255)",
       borderRadius: "25px",
-      paddingRight: "20px",
-      paddingLeft: "20px",
+      padding: "20px",
       fontSize: "30px",
       borderStyle: "inset",
-      // border: "1px,solid,black",
       fontWeight: "bolder",
       marginLeft: "130px",
       marginTop: "40px",
-      // borderWidth: "3px",
       ":hover": {
         backgroundColor: "#37a9ff",
         color: "white",
       },
+      ...tabletDesign({
+        marginLeft: "0",
+        marginTop: "10px",
+        padding: "0px 10px",
+        fontSize: "18px",
+      }),
+    },
+    heroright: {
+      maxWidth: "100%",
+      height: "auto",
+      ...tabletDesign({
+        marginTop: "20px",
+      }),
+    },
+    img: {
+      width: "100%",
+      height: "auto",
     },
   };
+
   return (
-    // hero main section starts
     <Box sx={styles.mainherodiv}>
-      {/* content of herosection starts */}
-      <box>
-        {/* left side content */}
-        <Typography sx={styles.order}>
-          ORDER <br></br>ONLINE
-        </Typography>
+      <Box>
+        <Typography sx={styles.order}>ORDER ONLINE</Typography>
         <Button sx={styles.btn} variant="outlined">
           Shop Now
         </Button>
-      </box>
-      {/* right side content */}
-      <box sx={styles.heroright}>
-        <img src={Herosectionimg} width={736.94} height={"545.72"} />
-      </box>
+      </Box>
+      <Box sx={styles.heroright}>
+        <img src={Herosectionimg} alt="Hero Section" style={styles.img} />
+      </Box>
     </Box>
   );
 };
+
 export default Herosection;

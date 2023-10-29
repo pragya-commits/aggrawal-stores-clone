@@ -1,33 +1,24 @@
 import React from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import safe from "./safe.png";
 import quick from "./quick.png";
 import products from "./products.png";
-const Aggrawalstores = () => {
+import { useResponsiveStyles } from "../utils/useResponsiveStyles";
+
+const Feature = ({ imageSrc, text }) => {
+  const { tabletDesign } = useResponsiveStyles();
   const styles = {
-    maincontentdiv: {
+    featureBox: {
       display: "flex",
-      justifyContent: "space-between",
-      paddingRight: "180px",
-      paddingLeft: "60px",
+      flexDirection: "column",
+      alignItems: "center",
+      ...tabletDesign({
+        marginTop: "20px",
+      }),
     },
-    mainstore: {
-      position: "relative",
-      width: "100%",
-      minHeight: "1px",
-      paddingright: "15px",
-      paddingLeft: "15px",
-      backgroundColor: "#ffe308",
-      paddingRight: "90px",
-      paddingLeft: "80px",
-      paddingTop: "70px",
-      paddingBottom: "70px",
-    },
-    lefttext: {
-      fontSize: "5.571vw",
-      fontWeight: "700",
-      lineHeight: ".91",
-      textAlign: "left",
+    image: {
+      width: 155.39,
+      height: 157.87,
     },
     text: {
       fontSize: "22px",
@@ -35,46 +26,76 @@ const Aggrawalstores = () => {
       lineHeight: "1.5",
       color: "#212529",
       textAlign: "center",
+      ...tabletDesign({
+        fontSize: "18px",
+      }),
     },
   };
 
   return (
-    // main div of Aggrawal stores//
-    <Box sx={styles.mainstore}>
-      {/* main content div starts from here */}
-      <Box sx={styles.maincontentdiv}>
-        {/* left side content */}
-        <Typography sx={styles.lefttext}>
-          Why<br></br>Aggrawal<br></br>Stores?
-        </Typography>
-        <Box>
-          <img src={safe} width={155.39} height={157.87} />
-          <Box>
-            <Typography sx={styles.text}>
-              SAFE & QUICK <br></br>SERVICE
-            </Typography>
-          </Box>
-        </Box>
-
-        <Box>
-          <img src={quick} width={155.39} height={157.87} />
-          <Box>
-            <Typography sx={styles.text}>
-              DELIVERY AND <br></br>PICKUP
-            </Typography>
-          </Box>
-        </Box>
-
-        <Box>
-          <img src={products} width={155.39} height={157.87} />
-          <Box>
-            <Typography sx={styles.text}>
-              TONS OF <br></br>PRODUCTS
-            </Typography>
-          </Box>
-        </Box>
+    <Box sx={styles.featureBox}>
+      <img src={imageSrc} alt="Feature" style={styles.image} />
+      <Box>
+        <Typography sx={styles.text}>{text}</Typography>
       </Box>
     </Box>
   );
 };
+
+const Aggrawalstores = () => {
+  const { tabletDesign } = useResponsiveStyles();
+
+  const styles = {
+    mainstore: {
+      width: "100%",
+      backgroundColor: "#ffe308",
+      padding: "70px 80px",
+      ...tabletDesign({
+        padding: "30px 0px",
+      }),
+    },
+    maincontentdiv: {
+      display: "flex",
+      justifyContent: "space-between",
+      paddingRight: "180px",
+      paddingLeft: "60px",
+      alignItems: "center",
+      ...tabletDesign({
+        flexDirection: "column",
+        // alignItems: "flex-start",
+        justifyContent: "center",
+        paddingRight: "0px",
+        paddingLeft: "0px",
+      }),
+    },
+    lefttext: {
+      fontSize: "5.571vw",
+      fontWeight: "700",
+      lineHeight: ".91",
+      textAlign: "left",
+      ...tabletDesign({
+        fontSize: "40px",
+        textAlign: "center",
+      }),
+    },
+  };
+
+  return (
+    <Box sx={styles.mainstore}>
+      <Box sx={styles.maincontentdiv}>
+        <Typography sx={styles.lefttext}>
+          Why
+          <br />
+          Aggrawal
+          <br />
+          Stores?
+        </Typography>
+        <Feature imageSrc={safe} text="SAFE & QUICK SERVICE" />
+        <Feature imageSrc={quick} text="DELIVERY AND PICKUP" />
+        <Feature imageSrc={products} text="TONS OF PRODUCTS" />
+      </Box>
+    </Box>
+  );
+};
+
 export default Aggrawalstores;

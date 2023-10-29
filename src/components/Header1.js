@@ -1,8 +1,7 @@
-import { Box, Button, Typography } from "@mui/material";
 import React from "react";
-// import Logo1 from "./aggrawal stores logo.png";
+import { Box, Button, Hidden, Typography } from "@mui/material";
 import Logo1 from "../assets/images/aggrawal stores logo.png";
-import contact1 from "./contact image.png";
+import { FaUserAlt } from "react-icons/fa";
 
 const Header1 = () => {
   const styles = {
@@ -10,10 +9,8 @@ const Header1 = () => {
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      marginLeft: "50px",
-      marginRight: "50px",
-      marginTop: "12px",
-      marginBottom: "12px",
+      padding: "0 50px",
+      margin: "12px 0",
     },
     navbar: {
       display: "flex",
@@ -23,7 +20,7 @@ const Header1 = () => {
     navitem: {
       marginRight: "30px",
       cursor: "pointer",
-      ":hover": {
+      "&:hover": {
         backgroundColor: "black",
         color: "white",
         borderRadius: "40px",
@@ -32,47 +29,46 @@ const Header1 = () => {
       },
     },
     btn: {
-      paddingRight: "35px",
-      paddingLeft: "35px",
-      paddingTop: "8px",
-      paddingBottom: "8px",
+      padding: "8px 35px",
       fontSize: "18px",
       fontWeight: "700",
       bordermaxwidth: "5px",
       borderRadius: "10px",
-
-      ":hover": {
+      "&:hover": {
         backgroundColor: "#007bff",
         color: "white",
       },
     },
-    contact1: {
-      marginRight: "5px",
+    logo: {
+      width: "100px",
+      height: "50px",
     },
   };
 
   return (
-    <div>
-      {/* div---> Box */}
-      {/* className---> sx */}
-      <Box sx={styles.mainheaddiv}>
-        <Box>
-          <img src={Logo1} width={100} height={50} />
-        </Box>
+    <Box sx={styles.mainheaddiv}>
+      <Box>
+        <img src={Logo1} alt="Aggrawal Stores Logo" sx={styles.logo} />
+      </Box>
 
+      <Hidden mdDown>
         <Box sx={styles.navbar}>
-          {/* (h1-h6,p,span)----> Typography */}
-          <Typography sx={styles.navitem}> CONTACT US</Typography>
-          <Typography sx={styles.navitem}> FIND NEAREST STORE</Typography>
-          <Typography sx={styles.navitem}> ORDER ONLINE</Typography>
-          {/* button---> Button */}
+          <Typography variant="h6" sx={styles.navitem}>
+            CONTACT US
+          </Typography>
+          <Typography variant="h6" sx={styles.navitem}>
+            FIND NEAREST STORE
+          </Typography>
+          <Typography variant="h6" sx={styles.navitem}>
+            ORDER ONLINE
+          </Typography>
           <Button sx={styles.btn} variant="outlined">
             SIGNUP
-            <img src={contact1} width={20} height={20} />
+            <FaUserAlt sx={{ marginLeft: "10px" }} />
           </Button>
         </Box>
-      </Box>
-    </div>
+      </Hidden>
+    </Box>
   );
 };
 

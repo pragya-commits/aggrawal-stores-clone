@@ -1,7 +1,10 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import people from "./people.png";
+import { useResponsiveStyles } from "../utils/useResponsiveStyles";
+
 const Aboutus = () => {
+  const { tabletDesign } = useResponsiveStyles();
   const styles = {
     mainaboutdiv: {
       backgroundColor: "#FFD700",
@@ -9,49 +12,67 @@ const Aboutus = () => {
       justifyContent: "space-between",
       padding: "30px",
     },
-    rightsimage: {
-      paddingLeft: "600px",
-      paddingBottom: "900",
+    aboutSection: {
+      flex: 1,
+      display: "flex",
+      flexDirection: "column",
+      paddingLeft: "150px",
+      ...tabletDesign({
+        paddingLeft: "0",
+      }),
     },
     about: {
-      fontSize: "5.2vw",
+      fontSize: "46px", // Adjust as needed
       fontWeight: "700",
       textAlign: "left",
-      paddingLeft: "150px",
       paddingTop: "20px",
+      paddingBottom: "30px",
+      ...tabletDesign({
+        fontSize: "30px",
+      }),
     },
     paragraph: {
-      fontSize: "1.467vw",
+      fontSize: "30px", // Adjust as needed
       textAlign: "left",
       fontWeight: "550",
-      fontStretch: "normal",
-      fontStyle: "normal",
       lineHeight: "1.55",
-      letterSpacing: "normal",
-      paddingLeft: "150px",
+      width: "100%",
+      ...tabletDesign({
+        fontSize: "18px",
+      }),
+    },
+    peopleImage: {
+      paddingLeft: "30px",
+      display: "flex",
+      alignItems: "center",
+      ...tabletDesign({
+        display: "none",
+      }),
+    },
+    image: {
+      maxWidth: "100%",
+      height: "auto",
     },
   };
+
   return (
     <Box sx={styles.mainaboutdiv}>
-      {/* content of herosection starts */}
-      <Box sx={styles.aboutsection}>
-        {/* left side content */}
-        <Typography sx={styles.about}>About Us</Typography>
+      <Box sx={styles.aboutSection}>
+        <Typography variant="h4" sx={styles.about}>
+          About Us
+        </Typography>
         <Typography sx={styles.paragraph}>
-          Excesmallteur sint occaecat cupidatat non proident, sunt<br></br>
-          in culpa qui officia deserunt Excepteur sint occaecat<br></br>
-          cupidatat non proident, sunt in culpa qui officia<br></br>
-          deserunt Excepteur sint occaecat cupidatat non<br></br>
-          proident, sunt in culpa qui officia deserunt Excepteur<br></br>
-          sint occaecat cupidatat non proident, sunt in culpa qui<br></br>
-          officia deserunt
+          At Aggarwal Stores, we have been serving our community with dedication
+          and passion for over 15 years. We take pride in being your trusted
+          neighborhood store, providing you with a wide range of high-quality
+          products and exceptional service.
         </Typography>
       </Box>
-      {/* right side content */}
-      <Box sx={styles.peopleimage}>
-        <img src={people} width={526.39} height={348.79} />
+      <Box sx={styles.peopleImage}>
+        <img src={people} alt="People" style={styles.image} />
       </Box>
     </Box>
   );
 };
+
 export default Aboutus;

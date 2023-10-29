@@ -4,7 +4,9 @@ import offerspray from "./offerspray.png";
 import offerpink from "./offerpink.png";
 import offermakeup from "./offermakeup.png";
 import offermilk from "./offermilk.png";
+import { useResponsiveStyles } from "../utils/useResponsiveStyles";
 const Offers = () => {
+  const { tabletDesign } = useResponsiveStyles();
   const styles = {
     offersimg: {
       display: "flex",
@@ -22,10 +24,20 @@ const Offers = () => {
       justifyContent: "space-between",
       flexWrap: "wrap",
     },
+    text: {
+      fontSize: "70px",
+      fontWeight: "700",
+      paddingLeft: "100px",
+    },
+    root: {
+      ...tabletDesign({
+        display: "none",
+      }),
+    },
   };
   return (
-    <Box>
-      <Typography>Offers</Typography>
+    <Box sx={styles?.root}>
+      <Typography sx={styles?.text}>Offers</Typography>
       <Box sx={styles.offersimg}>
         <Box sx={styles.firstBox}>
           <img src={offerspray} width={460} />

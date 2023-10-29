@@ -1,41 +1,39 @@
-import { Box, Typography } from "@mui/material";
 import React from "react";
+import { Box, Typography } from "@mui/material";
 import Deliveryimage from "./delivery.png";
+
 const Delivery = () => {
   const styles = {
     maindeliverydiv: {
-      marginTop: "150px",
-      alignItem: "center",
-      marginLeft: "35px",
-      // margin: "0 auto",
+      alignItems: "center", // Fixed the typo here (alignItem -> alignItems)
+
+      textAlign: "center",
+      padding: "50px 30px 30px 30px",
     },
     text: {
       fontSize: "4.933vw",
       fontWeight: "700",
-      lineHeight: ".95",
-      textAlign: "center",
+      lineHeight: "0.95",
       marginTop: "2%",
-      paddingBottom: "5%",
       color: "rgb(24, 119, 250)",
+    },
+    deliveryImage: {
+      width: "100%",
+      maxWidth: "1110px",
+      height: "auto",
     },
   };
 
   return (
     <Box sx={styles.maindeliverydiv}>
-      <img
-        src={Deliveryimage}
-        width={1110}
-        height={559.41}
-        style={{
-          paddingLeft: "10%",
-        }}
-      />
+      <img src={Deliveryimage} alt="Delivery" style={styles.deliveryImage} />
       <Box sx={styles.deliverytext}>
         <Typography sx={styles.text}>
-          We are delivering in 5 km Radius of all <br></br>our stores
+          We are delivering in a 5 km radius of all our stores
         </Typography>
       </Box>
     </Box>
   );
 };
+
 export default Delivery;
